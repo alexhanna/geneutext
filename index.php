@@ -85,6 +85,7 @@ $res = array(
 	"/\b(her)(\s+and|\s+or)\b/" => 'them',  // a bit of a hack for now
 	"/\b(her)\./"               => 'them.', // a bit of a hack for now
 	"/\b(her),/"                => 'them,', // a bit of a hack for now
+	"/\b(her)$/"                => 'them',  // a bit of a hack for now
 	'/\b(him)\b/i'              => 'them',
 	'/\b(his|her)\b/i'          => 'their',
 	'/\b(himself|herself)\b/i'  => 'themself'
@@ -97,10 +98,6 @@ foreach ($res as $pattern => $replacement) {
 			return preserveCase($m, $replacement);
 		}, $a);
 }
-
-## TK: algorithm
-## check capitalization for each item and store
-## run each regex
 
 ?>
 <html lang="en">
@@ -126,14 +123,14 @@ foreach ($res as $pattern => $replacement) {
 				<div class="col-xs-6">
 					<div class="form-group">
 						<p><label for="q">Put gendered text here</label></p>
-						<p><textarea class="form-control" name="q" id="q" rows="6"><? echo $q; ?></textarea></p>
+						<p><textarea class="form-control" name="q" id="q" rows="12"><? echo $q; ?></textarea></p>
 						<p><button type="submit" class="btn btn-default">Submit</button></p>
 					</div>
 				</div>
 				<div class="col-xs-6">
 					<div class="form-group">
 						<p><label for="a">Gender-neutral text</label></p>
-						<p><textarea class="form-control" rows="6"><?php echo $a; ?></textarea></p>
+						<p><textarea class="form-control" rows="12"><?php echo $a; ?></textarea></p>
 					</div>
 				</div>
 			</form>
