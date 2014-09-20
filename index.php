@@ -87,6 +87,7 @@ $res = array(
 	"/\b(her),/"                => 'them,', // a bit of a hack for now
 	"/\b(her)$/"                => 'them',  // a bit of a hack for now
 	'/\b(him)\b/i'              => 'them',
+	'/\b(hers)\b/i'             => 'theirs',
 	'/\b(his|her)\b/i'          => 'their',
 	'/\b(himself|herself)\b/i'  => 'themself'
 	);
@@ -148,6 +149,7 @@ foreach ($res as $pattern => $replacement) {
 	    <div id="footer">
 	      <div class="container">
 	        <p class="text-muted"><small>This site was written hastily by <a href="http://alex-hanna.com" target="_blank">Alex Hanna</a> (they/them/theirs).</small></p>
+	        <p class="text-muted"><small>You can find the code on <a href="https://github.com/alexhanna/geneutext" target="_blank">GitHub</a>. Please suggest additions!</small></p>	        
 	      </div>
 	    </div>		
 	</body>
